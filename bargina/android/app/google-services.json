@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "646533917150",
+    "project_id": "bargainia-f1305",
+    "storage_bucket": "bargainia-f1305.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646533917150:android:3ee46a0f38ccfe55b1154f",
+        "android_client_info": {
+          "package_name": "com.app.bargina.bargina"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646533917150-i1s2eqksn40e7anulfsldba3isjgpv4b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.bargina.bargina",
+            "certificate_hash": "9992f9b145c8f33d1839da6947a5cc2f65c6cecc"
+          }
+        },
+        {
+          "client_id": "646533917150-ovm2iuic1rrr3g4ag2rkp7fjeoiaka7d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.bargina.bargina",
+            "certificate_hash": "e77a2c9bb4b8728a740b898b851eedd82f64d7ea"
+          }
+        },
+        {
+          "client_id": "646533917150-p7b4kpoabedjhoeomof10v4odl0mp4ot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-1sqPunQDg5lJvSG7Ua6b4lCKNkeakKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646533917150-p7b4kpoabedjhoeomof10v4odl0mp4ot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
