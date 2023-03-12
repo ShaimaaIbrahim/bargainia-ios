@@ -1,30 +1,22 @@
 import 'dart:developer';
 
-import 'package:bargina/routes/RoutesNames.dart';
 import 'package:bargina/screens/main/BaseViewModel.dart';
-import 'package:bargina/screens/main/account/orders/order_details_screen.dart';
 import 'package:bargina/screens/main/cart/checkout/pages/summary_page.dart';
 import 'package:bargina/screens/main/cart/model/cart_entity.dart';
-import 'package:bargina/screens/main/model/category_input_model.dart';
 import 'package:bargina/screens/main/model/ship_price_model.dart';
-import 'package:bargina/screens/payment/payment_page.dart';
 import 'package:bargina/services/db_services.dart';
-import 'package:bargina/services/navigation_service.dart';
-import 'package:bargina/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dio/dio.dart';
+
 import '../../../../Locator.dart';
 import '../../../../enums/ScreenState.dart';
 import '../../../../models/Resources.dart';
 import '../../../../models/Status.dart';
+import '../../../../models/purchases_model.dart';
 import '../../../../services/api_services.dart';
 import '../../../../utils/common_functions.dart';
-import '../../account/model/order_details_model.dart';
-import '../model/checkoutid_model.dart';
 import '../model/new_order_model.dart';
-import 'package:get/get.dart';
 
 class CartViewModel extends BaseViewModel {
   static const platform = MethodChannel("com.app.bargina");
@@ -258,6 +250,24 @@ class CartViewModel extends BaseViewModel {
         break;
     }
   }
+
+  Future<PurchasesModel?> purchasesOrder(
+      BuildContext context, product_id,) async {
+    setState(ViewState.Busy);
+    Resource<Map<String,dynamic>> response = await _apiService.purchasesOrder(product_id);
+    switch (response.status) {
+      case Status.SUCCESS:
+        return PurchasesModel.fromJson(response.data!);
+      case Status.ERROR:
+        setState(ViewState.Idle);
+        print(">>>>>>><<<<error<<>>>>>>>>");
+        showSnackBar(response.errorMessage, context);
+        break;
+    }
+
+  }
+
+
 
   Future<void> calculateShippingPrice(BuildContext context, product_id,
       quantity, CartViewModel viewModel) async {

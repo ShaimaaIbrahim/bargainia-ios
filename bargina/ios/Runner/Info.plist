@@ -18,6 +18,11 @@
 	<string>bargina</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>CFBundleLocalizations</key>
+    <array>
+    	<string>en</string>
+    	<string>ar</string>
+    </array>
 	<key>CFBundleShortVersionString</key>
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
@@ -32,13 +37,13 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>UISupportedInterfaceOrientations</key>
 	<key>NSCameraUsageDescription</key>
-    <string>This app requires access to the camera.</string>
+    <string>This app requires access to the camera</string>
     <key>NSMicrophoneUsageDescription</key>
     <string>This app does not require access to the microphone.</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>Bargainia uses photos</string>
+    <key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>

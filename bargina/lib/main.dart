@@ -1,15 +1,17 @@
+import 'dart:io';
+
 import 'package:bargina/Locator.dart';
 import 'package:bargina/routes/AppRouter.dart';
 import 'package:bargina/routes/RoutesNames.dart';
 import 'package:bargina/services/navigation_service.dart';
 import 'package:bargina/utils/colors.dart';
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 String? currentIso;
 String? country;
@@ -24,28 +26,20 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp();
-
   setupLocator();
-
-  await Purchases.configure(_configuration);
-  print("userId: ${ await Purchases.appUserID}");
-
-
+  if(Platform.isIOS){
+   Purchases.configure(_configuration);
+   }
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  currentIso =
-  await Future.value(prefs.getString('default_language_iso') ?? 'ar');
-  country =
-  await Future.value(prefs.getString('default_language_country') ?? 'EG');
-
-
-  print('logs');
+  currentIso = await Future.value(prefs.getString('default_language_iso') ?? 'ar');
+  country = await Future.value(prefs.getString('default_language_country') ?? 'EG');
   runApp(
     EasyLocalization(
-      supportedLocales: [Locale('ar', 'EG'), Locale('en', 'US'),],
+      supportedLocales: const [Locale('ar', 'EG'), Locale('en', 'US'),],
       saveLocale: true,
       path: 'assets/translations',
-      startLocale: Locale('en', 'US'),
-      fallbackLocale: Locale('en', 'US'),
+      startLocale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('en', 'US'),
       child: const MyApp(),
     ),
   );

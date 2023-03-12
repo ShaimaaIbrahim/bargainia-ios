@@ -1,5 +1,4 @@
 
-
 enum Status { SUCCESS, ERROR }
 
 extension StatusExtension on Status {

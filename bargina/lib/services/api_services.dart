@@ -1066,6 +1066,27 @@ class ApiService {
       return Resource(Status.ERROR, errorMessage: 'unexpected error');
     }
   }
+  Future<Resource<Map<String,dynamic>>> purchasesOrder(product_id) async {
+    try {
+      var data = {
+        'product_id': product_id,
+      };
+
+      Response response = await _dio.post('$BASE_URL/neworder_card',
+          data: data, options: Options(headers: await getHeaders(true)));
+      log('neworder=============================${response.data}');
+      log('neworder=============================${product_id}');
+      if (response.statusCode == 200 && response.data['status']) {
+        return Resource(Status.SUCCESS,
+            data: response.data);
+      } else {
+        return Resource(Status.ERROR, errorMessage: response.data['message']);
+      }
+    } catch (e) {
+      log('neworder=============================${e.toString()}');
+      return Resource(Status.ERROR, errorMessage: 'unexpected error');
+    }
+  }
 
   Future<Resource<dynamic>> getOrderDetails(id) async {
     try {

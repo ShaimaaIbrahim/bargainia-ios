@@ -1,8 +1,7 @@
-import 'package:bargina/services/shared_prefrence_services.dart';
 import 'package:bargina/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hexcolor/hexcolor.dart';
+
 import '../Locator.dart';
 import '../routes/RoutesNames.dart';
 import '../services/navigation_service.dart';
@@ -25,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   void initState() {
 
     controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
     widthAnimation = Tween<double>(begin: 50, end: 800).animate(controller!)
       ..addListener(() {
         setState(() {});

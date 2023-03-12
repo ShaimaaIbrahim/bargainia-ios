@@ -11,17 +11,18 @@ import 'package:bargina/utils/extensions.dart';
 import 'package:bargina/widgets/circle_image.dart';
 import 'package:bargina/widgets/search_textfield.dart';
 import 'package:bargina/widgets/styled_button.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hexcolor/hexcolor.dart';
+
 import '../../Locator.dart';
 import '../../services/shared_prefrence_services.dart';
 import '../../utils/texts.dart';
 import '../auth/model/login_model.dart';
 import 'account/account_screen.dart';
 import 'category/category_screen.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 
 
@@ -36,6 +37,7 @@ class _MainScreenState extends State<MainScreen> {
 
   LoginModel? user;
   bool _isLogin = false;
+
 
   // List pages = [
   //    HomeScreen(viewModel: viewModel),
@@ -69,7 +71,7 @@ class _MainScreenState extends State<MainScreen> {
             break;
         }
         return  Scaffold(
-          drawer:  Container(
+          drawer:  SizedBox(
             width: MediaQuery.of(context).size.width * 0.6,
             child: Drawer(
               child: ListView(
@@ -104,7 +106,7 @@ class _MainScreenState extends State<MainScreen> {
                             Image.asset('assets/icons/account.png', ),
                             widthSpace(12.w),
                             med14Text('Account', color:HexColor('#1E272E') ),
-                            Spacer(),
+                            const Spacer(),
                             Image.asset('assets/icons/next.png', ),
                           ],
                         ).onTap((){
@@ -119,7 +121,7 @@ class _MainScreenState extends State<MainScreen> {
                             Image.asset('assets/icons/support.png', ),
                             widthSpace(12.w),
                             med14Text('Support', color: HexColor('#1E272E')),
-                            Spacer(),
+                            const Spacer(),
                             Image.asset('assets/icons/next.png', ),
 
                           ],

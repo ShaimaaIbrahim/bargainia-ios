@@ -777,11 +777,13 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - PromisesObjC (2.2.0)
-  - purchases_flutter (4.10.3):
+  - pay_ios (0.0.1):
     - Flutter
-    - PurchasesHybridCommon (= 4.13.4)
-  - PurchasesHybridCommon (4.13.4):
+  - PromisesObjC (2.2.0)
+  - purchases_flutter (4.10.4):
+    - Flutter
+    - PurchasesHybridCommon (= 4.13.5)
+  - PurchasesHybridCommon (4.13.5):
     - RevenueCat (= 4.17.7)
   - Reachability (3.2)
   - RevenueCat (4.17.7)
@@ -793,6 +795,8 @@ PODS:
   - sqflite (0.0.2):
     - Flutter
     - FMDB (>= 2.7.5)
+  - the_apple_sign_in (1.0.0):
+    - Flutter
   - url_launcher_ios (0.0.1):
     - Flutter
 
@@ -808,10 +812,12 @@ DEPENDENCIES:
   - hexcolor (from `.symlinks/plugins/hexcolor/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
+  - pay_ios (from `.symlinks/plugins/pay_ios/ios`)
   - purchases_flutter (from `.symlinks/plugins/purchases_flutter/ios`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/ios`)
   - sms_autofill (from `.symlinks/plugins/sms_autofill/ios`)
   - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - the_apple_sign_in (from `.symlinks/plugins/the_apple_sign_in/ios`)
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
 
 SPEC REPOS:
@@ -868,6 +874,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/image_picker_ios/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/ios"
+  pay_ios:
+    :path: ".symlinks/plugins/pay_ios/ios"
   purchases_flutter:
     :path: ".symlinks/plugins/purchases_flutter/ios"
   shared_preferences_foundation:
@@ -876,6 +884,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/sms_autofill/ios"
   sqflite:
     :path: ".symlinks/plugins/sqflite/ios"
+  the_apple_sign_in:
+    :path: ".symlinks/plugins/the_apple_sign_in/ios"
   url_launcher_ios:
     :path: ".symlinks/plugins/url_launcher_ios/ios"
 
@@ -915,14 +925,16 @@ SPEC CHECKSUMS:
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
+  pay_ios: 8c7beb9c61d885f3f51b61f75f8793023fc8843a
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
-  purchases_flutter: feb241b9dd91e8255e2d2d9d5b0266fa8427fe29
-  PurchasesHybridCommon: d8948a07502c3160fddb0e6ff1c06496222dcddf
+  purchases_flutter: 9199c400588e3489b9c69ef03c717bf28d629a92
+  PurchasesHybridCommon: 0643624116307c643fae1aff767c0e8d0ce64a37
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RevenueCat: 15a06dbce1021474e6dc9b31b1fce43fe55fcaf2
   shared_preferences_foundation: 986fc17f3d3251412d18b0265f9c64113a8c2472
   sms_autofill: c461043483362c3f1709ee76eaae6eb570b31686
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
+  the_apple_sign_in: 2e78c83cdb09eba07bb16dcc1f3bc12fcdc8263d
   url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
 
 PODFILE CHECKSUM: 775997f741c536251164e3eacf6e34abf2eb7a17

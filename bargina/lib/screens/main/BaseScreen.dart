@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
+
 import '../../Locator.dart';
 import 'BaseViewModel.dart';
 
@@ -22,7 +23,7 @@ class _BaseScreenState<T extends BaseViewModel> extends State<BaseScreen<T>> {
   void initState() {
     super.initState();
     if (WidgetsBinding.instance != null) {
-      WidgetsBinding.instance?.addPostFrameCallback((_) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
         if (widget.onModelReady != null && mounted) {
             widget.onModelReady!(model);
         }

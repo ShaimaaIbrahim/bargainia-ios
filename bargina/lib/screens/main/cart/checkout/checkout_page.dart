@@ -1,26 +1,20 @@
-
 import 'package:bargina/enums/ScreenState.dart';
-import 'package:bargina/screens/auth/verification_screen.dart';
 import 'package:bargina/screens/main/BaseScreen.dart';
 import 'package:bargina/screens/main/cart/checkout/pages/address_page.dart';
 import 'package:bargina/screens/main/cart/checkout/pages/payments_page.dart';
 import 'package:bargina/screens/main/cart/checkout/pages/shipping_page.dart';
-import 'package:bargina/screens/main/cart/checkout/pages/summary_page.dart';
-import 'package:bargina/screens/main/cart/model/cart_entity.dart';
-import 'package:bargina/screens/main/home/viewmodel/home_viewmodel.dart';
 import 'package:bargina/services/navigation_service.dart';
 import 'package:bargina/utils/common_functions.dart';
 import 'package:bargina/utils/extensions.dart';
 import 'package:bargina/widgets/styled_button.dart';
+import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:expandable_page_view/expandable_page_view.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hexcolor/hexcolor.dart';
 import '../../../../Locator.dart';
 import '../../../../utils/colors.dart';
 import '../../../../utils/texts.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hexcolor/hexcolor.dart';
-
 import '../viewmodel/cart_viewmodel.dart';
 
 class CheckOutPage extends StatelessWidget {
@@ -155,6 +149,9 @@ class CheckOutPage extends StatelessWidget {
                               ),
                             ): StyledButton(
                               function: () {
+
+
+
                                 if(vm.currentPage ==0 && vm.selectedAddressId!=null){
                                   controller.jumpToPage(vm.currentPage+1);
                                 }
@@ -162,6 +159,7 @@ class CheckOutPage extends StatelessWidget {
                                   controller.jumpToPage(vm.currentPage+1);
                                 }
                                 else if(vm.currentPage== 2 && vm.paymentMethod!=null){
+
                                   vm.newOrder(context, productId, quantity, vm, digital??false);
                                 }else{
                                  // controller.jumpToPage(vm.currentPage+1);
