@@ -260,7 +260,6 @@ class CartViewModel extends BaseViewModel {
         return PurchasesModel.fromJson(response.data!);
       case Status.ERROR:
         setState(ViewState.Idle);
-        print(">>>>>>><<<<error<<>>>>>>>>");
         showSnackBar(response.errorMessage, context);
         break;
     }

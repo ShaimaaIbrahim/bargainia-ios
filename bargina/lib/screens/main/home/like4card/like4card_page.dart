@@ -51,7 +51,7 @@ class _Like4CardDetailsPageState extends State<Like4CardDetailsPage> {
             backgroundColor: HexColor('#E6E8EA'),
             body: SafeArea(
               child: SingleChildScrollView(
-                child: widget.cardItem==null  ? ProductDetailsShimmer() : Column(
+                child: widget.cardItem == null  ? ProductDetailsShimmer() : Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     heightSpace(10.h),
@@ -76,8 +76,7 @@ class _Like4CardDetailsPageState extends State<Like4CardDetailsPage> {
                               color: Colors.grey[700],
                             ),
                           ).onTap(() {
-                            Navigator.of(context)
-                                .pushNamed(RouteName.MainPage);
+                            Navigator.of(context).pushNamed(RouteName.MainPage);
                           })
                           // Badge(
                           //   badgeContent: bold12Text(vm.getCartItemsCountBadge(), color: secondaryColor),
@@ -135,21 +134,18 @@ class _Like4CardDetailsPageState extends State<Like4CardDetailsPage> {
                               child: StyledButton(
                                 function: () async{
                                   if(Platform.isIOS){
-
                                     setState(() {loading=true;});
-
                                     CartViewModel product=CartViewModel();
                                    PurchasesModel? data=await product.purchasesOrder(context, widget.cardItem.productId);
-
                                     setState(() {loading=false;});
                                     // todo coll api
                                     if(data!=null){
+
                                       InAppPurchases.inAppPurchases(
-                                        transactionId: "data.orderReference.toString()",
-                                        productId:  data.productId.toString(),
+                                        transactionId: data.orderReference.toString(),
+                                        productId:data.productId.toString(),
                                       );
                                     }
-
                                   }else{
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
@@ -161,9 +157,9 @@ class _Like4CardDetailsPageState extends State<Like4CardDetailsPage> {
                                  // locator<CartViewModel>().checkoutpage(context, cardItem.totalPrice);
                                 },
                                 fillColor: secondaryColor,
-                                child: semiBold14Text('CHECKOUT', color: whiteColor),
                                 width: 200.w,
                                 radius: true,
+                                child: semiBold14Text('CHECKOUT', color: whiteColor),
                               ),
                             ),
 
